@@ -81,7 +81,9 @@ better gerund. It is the noun.** *The operational cycle*.
 ### A heading is one phrase, not a phrase plus an afterthought
 
 **The comma is the tell, and unlike the rest of this file it is greppable.** Most weak headings
-are two pieces stitched together, and the stitch is almost always a comma.
+are two pieces stitched together, and the stitch is almost always a comma. **Grep the semicolon
+and the dash too** — *"Capability is settled; accountability is not"* is the same fracture with a
+different mark, and searching only for commas clears it.
 
 | Fractured | One phrase |
 |---|---|
@@ -188,15 +190,16 @@ that describes no case at all is worse.
 The exception is a heading whose subject genuinely is a location or a state — *"Where the draft
 lives, and whether the agent holds a credential"* — because there the position **is** the finding.
 
-### A title names the concept, not the question about it
+### A heading names the concept, not the question about it
 
-**A document title is not a section heading, and the difference is that other people say it out
-loud.** A section heading is read once, in place, by someone already inside the piece. A title is
-cited, searched for, put in a subject line, and repeated by a person recommending the piece to
-someone who has not read it. It has to survive all of that without its document around it, which
-is a harder job than any heading inside the document does.
+**No heading may defer its own subject.** This rule governs every slot — document title, section
+heading, slide title, eyebrow, bold lead-in — and it binds hardest on the document title, because
+a title is cited, searched for, put in a subject line, and repeated by a person recommending the
+piece to someone who has not read it. A title has to survive all of that without its document
+around it, which is a harder job than any heading inside the document does. But the defect is the
+same at every level, and it was first written here as a title rule by mistake.
 
-**The commonest title defect is the wh-nominal: a title that describes the shape of the answer
+**The commonest form is the wh-nominal: a heading that describes the shape of the answer
 instead of naming it.** *"What science agents stand on"* is well formed, stands on its own, names
 a subject, and passes every other rule in this file. It still loses to *"Workflow grounding for
 science agents"*, because the essay is about workflow grounding and the title never says the
@@ -218,6 +221,7 @@ nobody repeats does not travel.
 | "What science agents stand on" | **Workflow grounding for science agents** |
 | "Why the middle of the loop goes unwritten" | **The unwritten middle of the research cycle** |
 | "What makes a claim defensible six months later" | **Durable evidence in automated research** |
+| "The difference is what the workflow keeps" | **The record agents leave behind** |
 
 **Calm beats clever in the title slot, and the reason is not taste.** An interrogative or a
 riddle asks the reader for effort at the one moment they have committed least — before they have
@@ -226,10 +230,45 @@ rhetorical question you gave up is rarely wasted: it is usually the right **clos
 the reader has the context to feel it. *What are your agents standing on?* earns its place at the
 end of the essay it can no longer afford to be the name of.
 
-**This does not demote the assertion form.** A title that states the claim — *"Trustworthy AI is
+**This does not demote the assertion form.** A heading that states the claim — *"Trustworthy AI is
 achieved by distrusting AI"* — passes both tests: it is a complete thought, it survives being
-quoted, and it names its own subject. The rule is against the *interrogative* and the *wh-nominal*
-in the title slot, not against titles that say something.
+quoted, and it names its own subject. The rule is against the *interrogative* and the *wh-nominal*,
+not against headings that say something.
+
+#### Two tells, both greppable
+
+**A copula whose complement is a free relative.** *"The difference is what the workflow keeps"* is
+a grammatically complete assertion and still says nothing: *is* promises a definition and the
+*what*-clause withholds it. The heading announces that an answer exists. Search `is what`, `is
+how`, `is why`, `is where` in the heading slot; the same applies to *"What matters is how the
+context is curated"*, which defers twice.
+
+**A bare definite abstract as the subject.** *The difference*, *the gap*, *the shift*, *the
+problem*, *the question*, *the answer*. A definite article promises a referent the heading never
+supplies — *difference between what?* — so the noun does exactly what a pronoun does in an eyebrow,
+and the reader has to enter the paragraph to learn what the heading was about. The fix is to say
+the terms: not *"The difference"* but *"The record agents leave behind"*.
+
+#### The strongest sentence in a section is usually the worst heading for it
+
+**A thesis is built to be arrived at; a heading is read before anything is established.** This is
+why the failure keeps recurring in otherwise-good writing: the author has a genuinely strong line
+and promotes it, and the promotion is what breaks it. *"The difference is what the workflow
+keeps"* is the right closing sentence of the essay it opened, and *"What science agents stand on"*
+is the right closing question of the essay it named.
+
+**The tell is that the heading is the section's payoff rather than its subject.** A problem
+statement headed by its own resolution spends the argument before making it — the reader arrives
+at the conclusion first and reads the setup knowing where it goes.
+
+**Reaching for the balanced antithesis is the same reach.** *"Capability is settled; accountability
+is not"* looks like a fix for a vague heading and is the defect returning in better clothes: two
+abstract nouns, a contrastive tail (see *A heading is one phrase*, below — the stitch is a
+semicolon, which evades the comma grep), and a second half that leads on an absence. Aphorism is
+the most expensive thing to put in the one slot where the reader has committed least.
+
+**Leave the sentence where it was working.** It is almost always still the best line in the
+paragraph, and the heading it was promoted into wants a noun phrase instead.
 
 ### An eyebrow names its subject
 
