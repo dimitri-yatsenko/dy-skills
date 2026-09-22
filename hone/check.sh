@@ -63,4 +63,5 @@ has verbosity && echo "  16 Appositive pile-up    two or more parenthetical asid
 has tone       && echo "  1  Metronomic cadence    3+ consecutive sentences of near-identical shape"
 has tone       && echo "  15 Bold scatter          a bolded phrase in every bullet"
 has headings   && echo "     Riddle headings       abstract pointers built from paragraph context"
+has headings   && echo "     Sub-claim headings    a true claim that covers one paragraph, not the section"
 printf '\n%s candidates (focus: %s). A candidate is not a finding.\n' "$hits" "$FOCUS"

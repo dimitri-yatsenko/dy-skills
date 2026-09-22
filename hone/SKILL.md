@@ -52,8 +52,17 @@ survives* · headings that lead on what something does **not** do · stative ver
 could take (*sits*, *lives*, *resides*, *underpins*) · riddle headings that point at a noun
 instead of saying it · eyebrows opening on a pronoun.
 
-**Read each heading in isolation, out of document order.** That is the only way the
-transferability test works, and no grep finds a riddle heading.
+**And the commonest one: a heading that asserts a sub-claim instead of covering the section.** It
+passes every other test — it asserts, the verb is active, the subject is named — and still
+mis-scopes the reader, because the claim is usually the section's setup rather than what it builds
+to. *"Every approach so far equips the model"* heads a section that exists to invert that; *"The
+next generation of model grounding"* covers it. Read the heading, then list what the section
+contains; if the claim is true of less than half, it is a pull-quote that wandered into the title
+slot.
+
+**Read each heading in isolation, out of document order — then read it again against the section
+under it.** The first catches riddles and transferability; only the second catches scope, and no
+grep finds either.
 
 Reference: [`headings.md`](reference/headings.md).
 

@@ -45,6 +45,38 @@ When describing what a thing does, what it does is always the more critical half
 | "The line is not a claim about how good the models are" | "A control point gates consequential actions" |
 | "What the record cannot satisfy" | "What the platform enforces, and what company process covers" |
 
+### A heading covers the section, not one sentence in it
+
+**The most common failure in otherwise-good headings: a true claim that holds for one paragraph
+and mis-scopes the rest.** It passes every other test — it asserts, it has an active verb, it
+names a subject — and it still misleads, because the reader arrives expecting the section to be
+about that claim and finds it is about something larger.
+
+The tell is that the heading's claim is the section's **setup** rather than what the section
+builds to. A section that walks seven approaches and then inverts them is not *about* the first
+six.
+
+| Asserts a sub-claim | Covers the section |
+|---|---|
+| "Every approach so far equips the model" | **The next generation of model grounding** |
+| "The middle of the loop goes unwritten" | **Building learning into the operational cycle** |
+| "A figure in a deck is an orphan" | **What the dependencies compute** |
+
+**The test: read the heading, then list what the section actually contains.** If the heading's
+claim is true of less than half of it, the heading is a pull-quote that wandered up into the
+title slot. Two fixes, and the second is usually better:
+
+1. **Name the scope** rather than asserting — the other permitted form. *"The next generation of
+   model grounding"* asserts nothing and mis-scopes nothing.
+2. **Assert what the section builds to**, not what it starts from. If the section exists to make
+   the inversion, the heading carries the inversion.
+
+Keep the abandoned sub-claim. It is usually a strong sentence, and it belongs in the paragraph
+where it was doing its work — often as the bold lead-in.
+
+**No search finds this.** It needs the heading read against the section under it, which is the one
+check that cannot be automated and the one most worth doing.
+
 ### A heading's verb is an action, not a position
 
 **A stative verb tells the reader where a thing is and leaves them to guess what it is for.**
