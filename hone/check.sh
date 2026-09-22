@@ -1,41 +1,66 @@
 #!/usr/bin/env bash
 # The grep shortcuts from the standard, run over one file.
 # Every hit is a CANDIDATE, not a finding — clear each by reading it.
+#   usage: check.sh <file> [--focus verbosity|headings|tone|all]
 set -uo pipefail
-F="${1:-}"
-[ -z "$F" ] && { echo "usage: check.sh <file>"; exit 2; }
+F="${1:-}"; shift || true
+FOCUS="all"
+while [ $# -gt 0 ]; do case "$1" in --focus) FOCUS="${2:-all}"; shift 2;; --focus=*) FOCUS="${1#*=}"; shift;; *) shift;; esac; done
+[ -z "$F" ] && { echo "usage: check.sh <file> [--focus verbosity|headings|tone|all]"; exit 2; }
 [ -r "$F" ] || { echo "cannot read $F"; exit 2; }
+has() { [ "$FOCUS" = all ] && return 0; case ",$FOCUS," in *,"$1",*) return 0;; *) return 1;; esac; }
 
 hits=0
 say() { printf '\n\033[1m%s\033[0m\n' "$1"; }
+scan() { # scan <label> <pattern>...
+  local label="$1"; shift; local found=0
+  say "$label"
+  for p in "$@"; do
+    if out=$(grep -nEi -- "$p" "$F" 2>/dev/null); then
+      n=$(printf '%s\n' "$out" | wc -l | tr -d ' '); hits=$((hits+n)); found=1
+      printf '  %-20s %s\n' "$p" "$n"
+      printf '%s\n' "$out" | cut -c1-116 | sed 's/^/      /'
+    fi
+  done
+  [ "$found" -eq 0 ] && echo "  none"
+}
 
-say "Prose candidates"
-for p in 'worth' 'rather than' '\bland' 'load-bearing' 'honest' 'deliberately' ', ensuring' \
-         ', allowing' ', enabling' ', making it' 'delve' 'leverage' 'robust' 'seamless' \
-         'in order to' 'it is important' 'not just' "isn't about" 'In short' 'Ultimately' \
-         'crucially' 'importantly' 'notably' 'unleash' 'powerful' 'journey' 'landscape'; do
-  if out=$(grep -nEi -- "$p" "$F"); then
-    n=$(printf '%s\n' "$out" | wc -l | tr -d ' ')
-    hits=$((hits + n))
-    printf '  %-18s %s\n' "$p" "$n"
-    printf '%s\n' "$out" | sed 's/^/      /' | cut -c1-118
-  fi
-done
-[ "$hits" -eq 0 ] && echo "  none"
+has verbosity && scan "Verbosity candidates" \
+  'worth' 'rather than' '\bland' 'load-bearing' 'in order to' 'it is important' \
+  ', ensuring' ', allowing' ', enabling' ', making it' ', providing' \
+  'not just' "isn't about" 'instead of' 'not merely' \
+  'delve' 'leverage' 'robust' 'seamless' 'powerful' 'journey' 'landscape' 'solutions' \
+  'underscore' 'testament to' 'tapestry' 'realm' 'unlock' 'unleash' \
+  'table stakes' 'low-hanging' 'move the needle' 'boil the ocean' 'double-click on' \
+  'you have heard' 'you already know' 'we all'
 
-say "Generic headings — guilty until the transferability test clears them"
-grep -nE '^#+ .*(Why|What|How|Where|Overview|Background|Context|Notes|Key |Approach|Summary|The claim|The point)' "$F" \
-  | sed 's/^/  /' || echo "  none"
+has tone && scan "Tone candidates" \
+  'importantly' 'crucially' 'notably' 'the key insight' 'make no mistake' \
+  'honest' 'genuinely' 'truly' 'frankly' 'precisely why' 'exactly what' 'deliberately' \
+  'In short' 'Ultimately' 'At the end of the day' \
+  'may potentially' 'can often' 'while .* has merits' \
+  'great question' "you're absolutely right" "I'd be happy to"
 
-say "Every heading, to read in isolation"
-grep -nE '^#+ ' "$F" | sed 's/^/  /' || echo "  none"
+hgrep() { # hgrep <label> <pattern>
+  say "$1"
+  if out=$(grep -nE "$2" "$F" 2>/dev/null); then
+    n=$(printf '%s\n' "$out" | wc -l | tr -d ' '); hits=$((hits+n))
+    printf '%s\n' "$out" | sed 's/^/  /'
+  else echo "  none"; fi
+}
+if has headings; then
+  hgrep "Generic headings — guilty until the transferability test clears them" \
+    '^#+ .*(Why|What|How|Where|Overview|Background|Context|Notes|Key |Approach|Summary|The claim|The point)'
+  hgrep "Stative verbs in headings" \
+    '^#+ .*\b(sits|lives|exists|resides|underpins|encompasses|is located|is found|serves as|is responsible for)\b'
+  say "Every heading — read these in isolation, out of document order"
+  grep -nE '^#+ ' "$F" | sed 's/^/  /' || echo "  none"
+fi
 
 say "No search finds these — read for them"
-cat <<'EOT'
-  1  Metronomic cadence    3+ consecutive sentences of near-identical length or shape
-  5  Decorative triple     three adjectives where two carry the weight
-  15 Bold scatter          a bolded phrase in every bullet
-  16 Appositive pile-up    two or more parenthetical asides in one sentence
-     Riddle headings       abstract pointers built from paragraph context
-EOT
-printf '\n%s prose candidates. A candidate is not a finding.\n' "$hits"
+has verbosity && echo "  5  Decorative triple     three adjectives where two carry the weight"
+has verbosity && echo "  16 Appositive pile-up    two or more parenthetical asides in one sentence"
+has tone       && echo "  1  Metronomic cadence    3+ consecutive sentences of near-identical shape"
+has tone       && echo "  15 Bold scatter          a bolded phrase in every bullet"
+has headings   && echo "     Riddle headings       abstract pointers built from paragraph context"
+printf '\n%s candidates (focus: %s). A candidate is not a finding.\n' "$hits" "$FOCUS"

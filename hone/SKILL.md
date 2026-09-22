@@ -1,8 +1,8 @@
 ---
 name: hone
-description: Revise prose against the writing standard — the one test, the nine principles, the generated-prose defects, heading craft, and rhythm. Reports findings with line numbers and the governing rule, and applies them on request. Use when asked to remove vacuous verbosity, tighten, sharpen, cut, edit, revise, or improve writing; to check headings or section titles; to find AI-sounding prose; or before a draft is circulated. NOT for brand matters — locked statements, vocabulary, positioning, claims, and disclosure belong to the brand-audit skill.
+description: Sharpen prose against the writing standard, in three focuses — verbosity, headings, and tone. Reports findings with line numbers and the governing rule, and applies them on request. Use when asked to remove vacuous verbosity, tighten, sharpen, cut, edit, revise, or improve writing; to fix headings or section titles; to adjust tone, register, or cadence; to find AI-sounding prose; or before a draft is circulated. NOT for brand matters — locked statements, vocabulary, positioning, claims, and disclosure belong to the brand-audit skill.
 allowed-tools: Read, Glob, Grep, Edit, Bash
-argument-hint: "<path> [--surface commercial|technical|internal|slides] [--mode audit|apply] [--depth quick|full]"
+argument-hint: "<path> [--focus verbosity|headings|tone|all] [--surface commercial|technical|internal|slides] [--mode audit|apply]"
 ---
 
 # Hone
@@ -25,72 +25,111 @@ vocabulary, positioning, claims, and the eight disclosure classes. Those have th
 so and move on; never restate a locked statement from memory, because a stale copy is worse than
 none.
 
+## The three focuses
+
+`--focus` selects which families run. Default `all`. Accepts a comma list — `--focus headings,tone`.
+
+### `verbosity` — does the sentence return what it cost?
+
+The one test, and principles 1, 2, 3, 5, 7, 8. Defects 2–8, 10–14, 16–19. The prose greps.
+
+Hunting: sentences that announce a point instead of making it · negated alternatives nobody
+proposed · trailing participle benefits · emphatic appositives · decorative triples · empty
+abstraction · claims about what the reader believes · anything deletable with no loss.
+
+**The paragraph test matters more than the sentence test.** When a paragraph's claim sits in its
+third sentence, that sentence is the opening — promote it and let the rest reorder behind it.
+
+Reference: [`principles.md`](reference/principles.md), [`defects.md`](reference/defects.md).
+
+### `headings` — could this line sit above a different section unchanged?
+
+Principle 6 in full, applied to `##` headings, slide titles, eyebrows, and the bold lead-in that
+opens a paragraph.
+
+Hunting: headings that enumerate instead of conveying — *delete every numeral and see what
+survives* · headings that lead on what something does **not** do · stative verbs a filing cabinet
+could take (*sits*, *lives*, *resides*, *underpins*) · riddle headings that point at a noun
+instead of saying it · eyebrows opening on a pronoun.
+
+**Read each heading in isolation, out of document order.** That is the only way the
+transferability test works, and no grep finds a riddle heading.
+
+Reference: [`headings.md`](reference/headings.md).
+
+### `tone` — does the voice sit in the band?
+
+Rhythm, cadence, and register. Defects 1, 6, 7, 9, 13, 15, 20, 21, 22.
+
+Hunting: metronomic cadence — three or more consecutive sentences of near-identical shape ·
+significance announcements · sincerity markers and doubled intensifiers · stacked hedges ·
+both-sidesing · affirmation padding and deference openers in reviews · em-dash density as a
+symptom of unstated relations · the register band, which fails at the timid end as well as the
+boastful one.
+
+**Read it aloud.** Metronomic cadence is inaudible on the page and obvious in the mouth.
+
+Reference: [`rhythm.md`](reference/rhythm.md).
+
 ## Modes
 
 Read the flags from what the user typed. Each has a default; state what you resolved before
 reporting anything.
 
-**`--surface commercial|technical|internal|slides`** — selects the mechanics, and getting it
-wrong produces findings that are themselves violations. Infer from the path when not given
-(`reference/surfaces.md` has the table); **when unclear, treat it as `commercial`.**
+**`--surface commercial|technical|internal|slides`** — selects the mechanics, and getting it wrong
+produces findings that are themselves violations. Infer from the path when not given
+([`surfaces.md`](reference/surfaces.md) has the table); **when unclear, treat it as `commercial`.**
 
 **`--mode audit|apply`** — `audit` is the default and only reads. `apply` edits the file, and is
 only ever used when the user asked for it in those words.
-
-**`--depth quick|full`** — `full` is the default: every principle, all 22 defects, every heading.
-`quick` runs defects 1–5 plus the heading grep, which is where most machine-written prose fails.
 
 ## Procedure
 
 ### 0. Resolve
 
-State the file, the resolved surface and how it was inferred, the mode, and the depth. One line.
+One line: the file, the focuses, the resolved surface and how it was inferred, the mode.
 
 ### 1. Read the standard, then the prose
 
-Load `reference/principles.md` first, and the others as the pass needs them:
+Load what the focuses need, plus [`surfaces.md`](reference/surfaces.md) always.
+[`figures.md`](reference/figures.md) for decks and any document carrying figures;
+[`terms.md`](reference/terms.md) when a finding turns on *slidedoc*, *furniture*, *eyebrow*, or
+*surface*.
 
-| File | When |
-|---|---|
-| [`principles.md`](reference/principles.md) | always — the one test and the nine |
-| [`defects.md`](reference/defects.md) | always — the 22, and the grep shortcuts |
-| [`headings.md`](reference/headings.md) | any document with headings, slide titles, or bold lead-ins |
-| [`surfaces.md`](reference/surfaces.md) | to resolve the surface and its mechanics |
-| [`rhythm.md`](reference/rhythm.md) | full depth, or when the prose reads flat |
-| [`figures.md`](reference/figures.md) | decks, and any document carrying figures |
-| [`terms.md`](reference/terms.md) | when a finding turns on *slidedoc*, *furniture*, *eyebrow*, *surface* |
-
-Then read the target completely before judging any sentence. A paragraph's defect is often that
-its claim sits in the third sentence, which you cannot see from the first.
+Then read the target **completely** before judging any sentence. A paragraph's defect is often
+invisible from its first line.
 
 ### 2. Run `check.sh`
 
-`./check.sh <path>` runs the grep shortcuts and the heading regex. **Every hit is a candidate, not
-a finding** — `rather than` is correct wherever the alternative is live. Clear each by reading it.
+`./check.sh <path> [--focus …]` runs the greps for the selected focuses. **Every hit is a
+candidate, not a finding** — `rather than` is correct wherever the alternative is live, and `land`
+is correct for a file landing in a watched prefix. Clear each by reading it.
 
 ### 3. Judge against the principles first
 
 The principles catch constructions the table does not list. Only then walk the defect table.
 
 **Four defects have no search and must be read for: metronomic cadence, decorative triple, bold
-scatter, and appositive pile-up.**
-
-Read every heading **in isolation** and apply the transferability test: could it sit above a
-different section in a different document unchanged? Then delete every numeral and see what
-survives — a heading that collapses was a count.
+scatter, and appositive pile-up.** Riddle headings likewise.
 
 ### 4. Report
 
-One row per finding, most severe first. Cite the rule, never invent one.
+One row per finding, most severe first, grouped by focus. Cite the rule; never invent one.
 
 ```
-## Hone — <file> (<surface>, <depth>)
+## Hone — <file> (<surface> · focus: <focuses> · <mode>)
 
+### Verbosity
 | # | Line | Found | Rule | Fix |
 |---|---|---|---|---|
-| 1 | 238 | `## Trustworthy is a defined term` | Heading observes instead of naming the move | `## Trustworthy AI is achieved by distrusting AI` |
+| 1 | 229 | "Two properties … are worth stating plainly." | Emphatic appositive + enumeration; fails the one test | Delete; open on the first property |
 
-<N> findings (<a> principles, <b> defects, <c> headings, <d> rhythm) · <e> candidates cleared
+### Headings
+| # | Line | Found | Rule | Fix |
+|---|---|---|---|---|
+| 2 | 238 | `## Trustworthy is a defined term` | Observes instead of naming the move | `## Trustworthy AI is achieved by distrusting AI` |
+
+<N> findings (<a> verbosity, <b> headings, <c> tone) · <d> candidates cleared
 ```
 
 A clean result is stated plainly, with what was checked, so the clean bill is auditable too.
@@ -103,8 +142,7 @@ the document. List those separately as *not applied, and why*, for the author to
 
 ## Common mistakes
 
-**Treating a candidate as a finding.** The greps are noisy by design. `rather than` is correct
-wherever the alternative is live; `land` is correct for a file landing in a watched prefix.
+**Treating a candidate as a finding.** The greps are noisy by design.
 
 **Auditing the wrong surface.** Flagging a missing terminal period on an essay heading, or
 permitting *by construction* in a deck, means the pass never resolved the surface.
@@ -112,6 +150,10 @@ permitting *by construction* in a deck, means the pass never resolved the surfac
 **Compressing instead of simplifying.** *"Sound schema, or one that merely runs?"* is worse than
 *"How do you tell a sound schema from one that merely runs?"* The test is not how many words came
 out — it is whether a person could say the result aloud without sounding like a telegram.
+
+**Cutting concrete detail as padding.** *"A clinical monitoring pipeline that works, on a broken
+foundation"* loses something real when *clinical monitoring* goes. Cut function words, never the
+specifics.
 
 **Rewriting a quotation, a locked statement, or published work.** The published archive is exempt:
 a dated artifact records what was said at its date.
@@ -123,8 +165,10 @@ failure that loses trust in the tool.
 
 | Want | Run |
 |---|---|
-| The standing "remove vacuous verbosity" pass | `/hone <path>` |
-| Fast check before sending | `/hone <path> --depth quick` |
+| The standing "remove vacuous verbosity" pass | `/hone <path> --focus verbosity` |
+| Fix the section titles | `/hone <path> --focus headings` |
+| It reads flat, or too pleased with itself | `/hone <path> --focus tone` |
+| Everything, before circulating a draft | `/hone <path>` |
 | Make the edits | `/hone <path> --mode apply` |
-| A deck or slide bodies | `/hone <path> --surface slides` |
+| A deck | `/hone <path> --surface slides` |
 | An essay or developer docs | `/hone <path> --surface technical` |
