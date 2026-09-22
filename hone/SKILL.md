@@ -50,7 +50,9 @@ opens a paragraph.
 Hunting: headings that enumerate instead of conveying — *delete every numeral and see what
 survives* · headings that lead on what something does **not** do · stative verbs a filing cabinet
 could take (*sits*, *lives*, *resides*, *underpins*) · riddle headings that point at a noun
-instead of saying it · eyebrows opening on a pronoun.
+instead of saying it · eyebrows opening on a pronoun · **dangling clauses** where a noun
+phrase or an assertion belongs — prepend *"The question is…"* and see whether it turns
+grammatical.
 
 **And the commonest one: a heading that asserts a sub-claim instead of covering the section.** It
 passes every other test — it asserts, the verb is active, the subject is named — and still

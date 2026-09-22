@@ -45,6 +45,31 @@ When describing what a thing does, what it does is always the more critical half
 | "The line is not a claim about how good the models are" | "A control point gates consequential actions" |
 | "What the record cannot satisfy" | "What the platform enforces, and what company process covers" |
 
+### A heading is an assertion or a noun phrase, never a dangling clause
+
+**A heading has two legitimate forms.** A complete assertion — *"Trustworthy AI is achieved by
+distrusting AI"* — or a noun phrase naming the topic — *"A formal language for research
+workflows"*. What it must never be is a subordinate clause that reads as the tail of a sentence
+nobody finished.
+
+**The test: prepend *"The question is…"*.** If the result is grammatical, the heading is a
+fragment that wandered into the title slot.
+
+| Dangling clause | States the topic |
+|---|---|
+| "What a research workflow is written in" | **A formal language for research workflows** |
+| "What a written-down workflow looks like" | **A workflow, written down** |
+| "How the foundation relates to what you already run" | **The foundation among the systems you already run** |
+
+The tell is usually a heading that **ends on a preposition** or opens on a wh-word and never
+resolves into either a subject and verb or a nameable thing. *"…is written in"* needs a clause in
+front of it before it means anything; the reader supplies that clause themselves, which is work
+the heading should have done.
+
+**A wh-opener is not itself the defect.** *"How AI gains grounding"* is a clean topic label: it
+names a subject and reads complete. *"What a research workflow is written in"* does not. The
+question is whether the line stands on its own, not which word it starts with.
+
 ### A heading covers the section, not one sentence in it
 
 **The most common failure in otherwise-good headings: a true claim that holds for one paragraph
