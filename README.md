@@ -8,15 +8,27 @@ A personal collection of Claude Code skills.
 
 ## Install
 
-Skills in a repo's `.claude/skills/` load only when the session is rooted in that repo. These are
-meant to be reachable from anywhere, so they install by symlink:
-
 ```sh
-mkdir -p ~/.claude/skills
-ln -s "$PWD/hone" ~/.claude/skills/hone
+./install.sh
 ```
 
-Then `/hone <path>` resolves in any session.
+Then **restart Claude Code** — skills are discovered at session start, so a new one is invisible
+to sessions already running. Type `/` and `hone` should be listed.
+
+### Why a symlink
+
+Claude Code discovers skills in two places, by directory convention only; there is no path
+setting to configure.
+
+| Location | Loads when |
+|---|---|
+| `<repo>/.claude/skills/<name>/SKILL.md` | the session is rooted in that repo |
+| `~/.claude/skills/<name>/SKILL.md` | **every session, any directory** |
+
+These belong in the second, but they should stay version-controlled here rather than living
+loose in `~/.claude`. `install.sh` symlinks each skill directory into `~/.claude/skills/`, so
+editing a skill in this clone takes effect immediately and `git pull` updates what every session
+sees. Re-run it after adding a skill or moving this clone.
 
 ## On the sources
 
