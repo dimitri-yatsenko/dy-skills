@@ -1,8 +1,8 @@
 ---
 name: hone
-description: Sharpen prose against the writing standard, in three focuses — verbosity, headings, and tone. Reports findings with line numbers and the governing rule, and applies them on request. Use when asked to remove vacuous verbosity, tighten, sharpen, cut, edit, revise, or improve writing; to fix headings or section titles; to adjust tone, register, or cadence; to find AI-sounding prose; or before a draft is circulated. NOT for brand matters — locked statements, vocabulary, positioning, claims, and disclosure belong to the brand-audit skill.
+description: Sharpen prose against the writing standard. Defaults to a verbosity pass over the work in hand; also checks headings and tone on request. Reports findings with line numbers and the governing rule, and applies them on request. Use when asked to remove vacuous verbosity, tighten, sharpen, cut, edit, revise, or improve writing; to fix headings or section titles; to adjust tone, register, or cadence; to find AI-sounding prose; or before a draft is circulated. NOT for brand matters — locked statements, vocabulary, positioning, claims, and disclosure belong to the brand-audit skill.
 allowed-tools: Read, Glob, Grep, Edit, Bash
-argument-hint: "<path> [--focus verbosity|headings|tone|all] [--surface commercial|technical|internal|slides] [--mode audit|apply]"
+argument-hint: "[<path>] [--focus verbosity|headings|tone|all] [--surface commercial|technical|internal|slides] [--mode audit|apply]"
 ---
 
 # Hone
@@ -27,7 +27,8 @@ none.
 
 ## The three focuses
 
-`--focus` selects which families run. Default `all`. Accepts a comma list — `--focus headings,tone`.
+`--focus` selects which families run. **Default `verbosity`** — the standing pass, and the one
+asked for most. Accepts a comma list (`--focus headings,tone`) or `all` for every family.
 
 ### `verbosity` — does the sentence return what it cost?
 
@@ -96,9 +97,30 @@ only ever used when the user asked for it in those words.
 
 ## Procedure
 
-### 0. Resolve
+### 0. Resolve the target
 
-One line: the file, the focuses, the resolved surface and how it was inferred, the mode.
+**A path is optional.** Bare `/hone` means *the work in hand*, resolved in this order:
+
+1. **A file named in the same message**, or the one the conversation has plainly been about.
+2. **The file most recently edited in this session.** If the last several edits were all to one
+   file, that is the target.
+3. **Otherwise ask git.** Prose files that are modified or untracked:
+
+   ```sh
+   { git diff --name-only; git diff --name-only --cached; \
+     git ls-files --others --exclude-standard; } 2>/dev/null \
+     | sort -u | grep -Ei '\.(md|markdown|txt|html)$'
+   ```
+
+   **One hit — take it.** Several — list them and ask which, unless the user said *everything I
+   have changed*, in which case run them in order and report per file.
+
+4. **Nothing changed and nothing in hand** — say so rather than guessing. Do not fall back to
+   scanning the repo; a whole-repo pass is a different job and nobody asked for it.
+
+Then state in one line: the file, the focuses, the resolved surface and how it was inferred, and
+the mode. If the target was inferred rather than given, **say which rule found it**, so a wrong
+guess is visible before any finding is read.
 
 ### 1. Read the standard, then the prose
 
@@ -176,10 +198,11 @@ failure that loses trust in the tool.
 
 | Want | Run |
 |---|---|
-| The standing "remove vacuous verbosity" pass | `/hone <path> --focus verbosity` |
+| The standing "remove vacuous verbosity" pass, on the work in hand | `/hone` |
+| A named file | `/hone <path>` |
 | Fix the section titles | `/hone <path> --focus headings` |
 | It reads flat, or too pleased with itself | `/hone <path> --focus tone` |
-| Everything, before circulating a draft | `/hone <path>` |
+| Every family, before circulating a draft | `/hone --focus all` |
 | Make the edits | `/hone <path> --mode apply` |
 | A deck | `/hone <path> --surface slides` |
 | An essay or developer docs | `/hone <path> --surface technical` |

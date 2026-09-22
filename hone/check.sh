@@ -3,10 +3,36 @@
 # Every hit is a CANDIDATE, not a finding — clear each by reading it.
 #   usage: check.sh <file> [--focus verbosity|headings|tone|all]
 set -uo pipefail
-F="${1:-}"; shift || true
-FOCUS="all"
-while [ $# -gt 0 ]; do case "$1" in --focus) FOCUS="${2:-all}"; shift 2;; --focus=*) FOCUS="${1#*=}"; shift;; *) shift;; esac; done
-[ -z "$F" ] && { echo "usage: check.sh <file> [--focus verbosity|headings|tone|all]"; exit 2; }
+F=""; FOCUS="verbosity"   # the standing pass
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --focus) FOCUS="${2:-verbosity}"; shift 2;;
+    --focus=*) FOCUS="${1#*=}"; shift;;
+    -h|--help) echo "usage: check.sh [file] [--focus verbosity|headings|tone|all]   (default: verbosity)"; exit 0;;
+    *) [ -z "$F" ] && F="$1"; shift;;
+  esac
+done
+
+# No file given: the prose this working tree has changed.
+# Portable to bash 3.2 (macOS) — no mapfile, no arrays.
+if [ -z "$F" ]; then
+  changed=$({ git diff --name-only; git diff --name-only --cached; \
+              git ls-files --others --exclude-standard; } 2>/dev/null \
+            | sort -u | grep -Ei '\.(md|markdown|txt|html)$' || true)
+  n=$(printf '%s' "$changed" | grep -c . || true)
+  if [ "$n" -eq 0 ]; then
+    echo "no file given, and no changed prose in this working tree"; exit 2
+  elif [ "$n" -eq 1 ]; then
+    F="$changed"; echo "no file given — using the one changed prose file: $F"; echo
+  else
+    echo "no file given. $n changed prose files:"
+    printf '%s\n' "$changed" | sed 's/^/  /'
+    echo
+    echo "Name one, or run them all:"
+    echo "  for f in \$(git diff --name-only | grep -E '\\.md\$'); do \"$0\" \"\$f\"; done"
+    exit 2
+  fi
+fi
 [ -r "$F" ] || { echo "cannot read $F"; exit 2; }
 has() { [ "$FOCUS" = all ] && return 0; case ",$FOCUS," in *,"$1",*) return 0;; *) return 1;; esac; }
 
