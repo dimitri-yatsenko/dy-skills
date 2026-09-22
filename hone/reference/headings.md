@@ -45,6 +45,39 @@ When describing what a thing does, what it does is always the more critical half
 | "The line is not a claim about how good the models are" | "A control point gates consequential actions" |
 | "What the record cannot satisfy" | "What the platform enforces, and what company process covers" |
 
+### A heading names the topic; it is not a sentence about the topic
+
+**Test every heading against the bare topic name before keeping anything longer.** Two or three
+words that name the subject usually beat a constructed claim, and almost always beat a question.
+
+| Constructed | The name |
+|---|---|
+| "How to tell a sound schema from one that merely runs" | **Schema design evaluation** |
+| "Building learning into the operational cycle" | **The operational cycle** |
+| "How the foundation relates to what you already run" | **The foundation in context** |
+
+**This is where *simplification is not compression* stops.** That rule governs sentences: cut
+function words, but keep the sentence a sentence, because a reader must be able to say it aloud.
+A heading is not a sentence and is not read aloud as one — it is a label the eye lands on while
+deciding whether to continue. *"How do you tell a sound schema from one that merely runs?"* is the
+right **sentence** and the wrong **heading**; *Schema design evaluation* is the right heading and
+would be a strange thing to say out loud. Do not carry the prose rule into the title slot.
+
+The assertion form still earns its place when the claim is the point and states it in about the
+same room — *"Trustworthy AI is achieved by distrusting AI"* is worth more than *Trustworthiness*.
+But an assertion that has to be built, that runs long, or that reads awkwardly has lost to the
+name already.
+
+### Two gerunds in a row are a rewrite, not a style
+
+**"Building learning into the operational cycle"** stacks *Building* on *learning*, and the ear
+stumbles before the eye finishes. The tell is literal: two `-ing` words adjacent, or a gerund
+opening a phrase that already contains one.
+
+It is nearly always a symptom of the heading trying to be a sentence — a gerund is a verb wearing
+a noun's coat, so reaching for one means the claim did not fit a noun phrase. **The fix is not a
+better gerund. It is the noun.** *The operational cycle*.
+
 ### A heading is one phrase, not a phrase plus an afterthought
 
 **The comma is the tell, and unlike the rest of this file it is greppable.** Most weak headings
@@ -54,7 +87,7 @@ are two pieces stitched together, and the stitch is almost always a comma.
 |---|---|
 | "A workflow, written down" | **An example workflow** |
 | "Two axes, not one" | **Where the draft lives, and whether the agent holds a credential** |
-| "Sound schema, or one that merely runs?" | **How to tell a sound schema from one that merely runs** |
+| "Sound schema, or one that merely runs?" | **Schema design evaluation** |
 | "The foundation, and what it holds" | **What the foundation holds** |
 
 Three things hide behind that comma:

@@ -54,7 +54,15 @@ could take (*sits*, *lives*, *resides*, *underpins*) · riddle headings that poi
 instead of saying it · eyebrows opening on a pronoun · **dangling clauses** where a noun
 phrase or an assertion belongs — prepend *"The question is…"* and see whether it turns
 grammatical · **fractured headings** — a phrase plus an afterthought, stitched with a comma,
-where one plain noun phrase belongs (*"A workflow, written down"* → *"An example workflow"*).
+where one plain noun phrase belongs (*"A workflow, written down"* → *"An example workflow"*) ·
+**stacked gerunds**, which mean the heading is trying to be a sentence (*"Building learning into
+the operational cycle"* → *"The operational cycle"*).
+
+**Test every heading against the bare topic name first.** Two or three words that name the
+subject usually beat a constructed claim and almost always beat a question — *"Schema design
+evaluation"*, not *"How to tell a sound schema from one that merely runs"*. This is where
+*simplification is not compression* stops: that rule governs sentences, and a heading is a label,
+not a sentence. Do not carry it into the title slot.
 
 **And the commonest one: a heading that asserts a sub-claim instead of covering the section.** It
 passes every other test — it asserts, the verb is active, the subject is named — and still
