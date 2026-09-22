@@ -136,7 +136,8 @@ the heading should have done.
 
 **A wh-opener is not itself the defect.** *"How AI gains grounding"* is a clean topic label: it
 names a subject and reads complete. *"What a research workflow is written in"* does not. The
-question is whether the line stands on its own, not which word it starts with.
+question is whether the line stands on its own, not which word it starts with. **In the title
+slot the bar is higher** — see *A title names the concept*, below.
 
 ### A heading covers the section, not one sentence in it
 
@@ -186,6 +187,49 @@ that describes no case at all is worse.
 
 The exception is a heading whose subject genuinely is a location or a state — *"Where the draft
 lives, and whether the agent holds a credential"* — because there the position **is** the finding.
+
+### A title names the concept, not the question about it
+
+**A document title is not a section heading, and the difference is that other people say it out
+loud.** A section heading is read once, in place, by someone already inside the piece. A title is
+cited, searched for, put in a subject line, and repeated by a person recommending the piece to
+someone who has not read it. It has to survive all of that without its document around it, which
+is a harder job than any heading inside the document does.
+
+**The commonest title defect is the wh-nominal: a title that describes the shape of the answer
+instead of naming it.** *"What science agents stand on"* is well formed, stands on its own, names
+a subject, and passes every other rule in this file. It still loses to *"Workflow grounding for
+science agents"*, because the essay is about workflow grounding and the title never says the
+words. A wh-nominal puts suspense where a term belongs: the reader is told an answer exists and
+made to open the document to learn what it is called.
+
+**The test: answer your own title in one noun phrase.** If you can — *what do science agents stand
+on?* *Workflow grounding.* — that noun phrase is the title, and the question was scaffolding. If
+you cannot answer it in a noun phrase, the question is genuinely the subject and may stay.
+
+**The second test: put it in someone else's sentence.** *"Have you read Workflow grounding for
+science agents?"* names a concept the listener can now hold. *"Have you read What science agents
+stand on?"* asks the listener to parse a riddle before they know whether they care. A title that
+needs a pause before the listener understands what it is about will not be repeated, and a title
+nobody repeats does not travel.
+
+| The question about the concept | The concept |
+|---|---|
+| "What science agents stand on" | **Workflow grounding for science agents** |
+| "Why the middle of the loop goes unwritten" | **The unwritten middle of the research cycle** |
+| "What makes a claim defensible six months later" | **Durable evidence in automated research** |
+
+**Calm beats clever in the title slot, and the reason is not taste.** An interrogative or a
+riddle asks the reader for effort at the one moment they have committed least — before they have
+decided to read anything. A noun phrase naming the concept asks for none and tells them more. The
+rhetorical question you gave up is rarely wasted: it is usually the right **closing** line, where
+the reader has the context to feel it. *What are your agents standing on?* earns its place at the
+end of the essay it can no longer afford to be the name of.
+
+**This does not demote the assertion form.** A title that states the claim — *"Trustworthy AI is
+achieved by distrusting AI"* — passes both tests: it is a complete thought, it survives being
+quoted, and it names its own subject. The rule is against the *interrogative* and the *wh-nominal*
+in the title slot, not against titles that say something.
 
 ### An eyebrow names its subject
 

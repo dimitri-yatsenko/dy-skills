@@ -58,6 +58,14 @@ where one plain noun phrase belongs (*"A workflow, written down"* → *"An examp
 **stacked gerunds**, which mean the heading is trying to be a sentence (*"Building learning into
 the operational cycle"* → *"The operational cycle"*).
 
+**A title is not a section heading.** It gets cited, searched for, and repeated by people who
+have not read the piece, so it must name the concept rather than ask about it. *"What science
+agents stand on"* passes every other test here and still loses to *"Workflow grounding for science
+agents"* — the essay is about workflow grounding, and the title never says the words. **Two
+tests:** answer the title in one noun phrase (if you can, that phrase is the title), and put it in
+someone else's sentence (*"have you read …?"*). The rhetorical question you give up is usually the
+right closing line.
+
 **Test every heading against the bare topic name first.** Two or three words that name the
 subject usually beat a constructed claim and almost always beat a question — *"Schema design
 evaluation"*, not *"How to tell a sound schema from one that merely runs"*. This is where
