@@ -1,4 +1,4 @@
-# claude-skills
+# dy-skills
 
 A personal collection of Claude Code skills.
 
