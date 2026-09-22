@@ -77,6 +77,8 @@ hgrep() { # hgrep <label> <pattern>
 if has headings; then
   hgrep "Generic headings — guilty until the transferability test clears them" \
     '^#+ .*(Why|What|How|Where|Overview|Background|Context|Notes|Key |Approach|Summary|The claim|The point)'
+  hgrep "Fractured headings — delete from the comma on and see what survives" \
+    '^#+ [^,]+,'
   hgrep "Stative verbs in headings" \
     '^#+ .*\b(sits|lives|exists|resides|underpins|encompasses|is located|is found|serves as|is responsible for)\b'
   say "Every heading — read these in isolation, out of document order"

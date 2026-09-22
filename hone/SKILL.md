@@ -2,7 +2,7 @@
 name: hone
 description: Sharpen prose against the writing standard. Defaults to a verbosity pass over the work in hand; also checks headings and tone on request. Reports findings with line numbers and the governing rule, and applies them on request. Use when asked to remove vacuous verbosity, tighten, sharpen, cut, edit, revise, or improve writing; to fix headings or section titles; to adjust tone, register, or cadence; to find AI-sounding prose; or before a draft is circulated. NOT for brand matters — locked statements, vocabulary, positioning, claims, and disclosure belong to the brand-audit skill.
 allowed-tools: Read, Glob, Grep, Edit, Bash
-argument-hint: "[<path>] [--focus verbosity|headings|tone|all] [--surface commercial|technical|internal|slides] [--mode audit|apply]"
+argument-hint: "[<path>] [--focus verbosity|headings|tone|all] [--surface commercial|technical|internal|slides] [--mode audit|apply] [--help]"
 ---
 
 # Hone
@@ -53,7 +53,8 @@ survives* · headings that lead on what something does **not** do · stative ver
 could take (*sits*, *lives*, *resides*, *underpins*) · riddle headings that point at a noun
 instead of saying it · eyebrows opening on a pronoun · **dangling clauses** where a noun
 phrase or an assertion belongs — prepend *"The question is…"* and see whether it turns
-grammatical.
+grammatical · **fractured headings** — a phrase plus an afterthought, stitched with a comma,
+where one plain noun phrase belongs (*"A workflow, written down"* → *"An example workflow"*).
 
 **And the commonest one: a heading that asserts a sub-claim instead of covering the section.** It
 passes every other test — it asserts, the verb is active, the subject is named — and still
@@ -85,7 +86,36 @@ Reference: [`rhythm.md`](reference/rhythm.md).
 
 ## Modes
 
-Read the flags from what the user typed. Each has a default; state what you resolved before
+**`--help` short-circuits everything.** Print the block below verbatim and stop — read no file,
+run no check, report nothing.
+
+```
+hone — sharpen prose against the writing standard
+
+  /hone                      the standing verbosity pass, on the work in hand
+  /hone <path>               a named file
+  /hone --mode apply         make the edits instead of reporting them
+
+  --focus   verbosity   does the sentence return what it cost   (default)
+            headings    could this line sit above another section
+            tone        cadence, register, hedges, em-dash density
+            all         every family
+            comma lists work: --focus headings,tone
+
+  --surface commercial | technical | internal | slides
+            inferred from the path; commercial when unclear
+
+  --mode    audit   report findings, change nothing   (default)
+            apply   make the mechanical edits, and list what was left alone
+
+  With no path: a file you named, else the one most recently edited,
+  else the changed prose in this working tree.
+
+  Craft only — whether a sentence is weak. Brand (locked statements,
+  vocabulary, positioning, claims, disclosure) belongs to brand-audit.
+```
+
+Read the other flags from what the user typed. Each has a default; state what you resolved before
 reporting anything.
 
 **`--surface commercial|technical|internal|slides`** — selects the mechanics, and getting it wrong

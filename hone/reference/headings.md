@@ -45,6 +45,41 @@ When describing what a thing does, what it does is always the more critical half
 | "The line is not a claim about how good the models are" | "A control point gates consequential actions" |
 | "What the record cannot satisfy" | "What the platform enforces, and what company process covers" |
 
+### A heading is one phrase, not a phrase plus an afterthought
+
+**The comma is the tell, and unlike the rest of this file it is greppable.** Most weak headings
+are two pieces stitched together, and the stitch is almost always a comma.
+
+| Fractured | One phrase |
+|---|---|
+| "A workflow, written down" | **An example workflow** |
+| "Two axes, not one" | **Where the draft lives, and whether the agent holds a credential** |
+| "Sound schema, or one that merely runs?" | **How to tell a sound schema from one that merely runs** |
+| "The foundation, and what it holds" | **What the foundation holds** |
+
+Three things hide behind that comma:
+
+- **An appended participle** — *"A workflow, written down"*. The modifier is doing the work the
+  noun should have done, so promote it into the noun: *an example workflow*, *a generated schema*.
+- **A second clause** — *"X, and Y"*. The vagueness is nearly always in the *and Y*.
+- **A contrastive tail** — *"X, not Y"* or *"X, or Y?"*. This is the negated alternative arriving
+  in the title slot, and it costs the reader a comparison before they know the subject.
+
+**The test: delete everything from the comma onward.** If what remains is a heading, the tail was
+decoration — drop it. If what remains is *not* a heading, the tail was carrying the meaning, and
+the head was throat-clearing — promote the tail and rebuild around it.
+
+**Not a ban — a diagnosis**, the same way em dashes are diagnosed rather than forbidden. A comma
+survives when what follows is a genuine second subject the section actually covers: *"Eight source
+systems, and what each holds"* keeps its comma, because the section really does cover both halves
+and neither alone would name it.
+
+**Reach for the plainest noun phrase that names the thing.** The instinct that produces a
+fractured heading is the instinct to be interesting, and a heading is the one line where that
+instinct costs the most: the reader is deciding whether to continue, not admiring the phrasing.
+*An example workflow* tells them what is coming. *A workflow, written down* asks them to work out
+what the participle is for.
+
 ### A heading is an assertion or a noun phrase, never a dangling clause
 
 **A heading has two legitimate forms.** A complete assertion — *"Trustworthy AI is achieved by
