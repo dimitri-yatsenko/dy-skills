@@ -41,8 +41,9 @@ noun, with the nouns withheld · anything deletable with no loss.
 
 **The restatement test, for riddles.** After one sentence, can the reader say what was claimed? If
 all they can say is that an answer is coming, name the things in the sentence that counts them:
-*"Two things have been getting better at once"* → *"The models have been getting better, and so has
-our ability to ground them in your data."*
+*"Two things have been getting better at once"* → *"AI agents have improved in two ways: model
+capabilities and their grounding in the subject matter."* The count is not the defect — a colon that
+delivers on it in the same sentence is the fix.
 
 **The paragraph test matters more than the sentence test.** When a paragraph's claim sits in its
 third sentence, that sentence is the opening — promote it and let the rest reorder behind it.
