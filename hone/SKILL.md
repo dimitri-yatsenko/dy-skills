@@ -36,7 +36,13 @@ The one test, and principles 1, 2, 3, 5, 7, 8. Defects 2–8, 10–14, 16–19. 
 
 Hunting: sentences that announce a point instead of making it · negated alternatives nobody
 proposed · trailing participle benefits · emphatic appositives · decorative triples · empty
-abstraction · claims about what the reader believes · anything deletable with no loss.
+abstraction · claims about what the reader believes · riddles — a count in front of a placeholder
+noun, with the nouns withheld · anything deletable with no loss.
+
+**The restatement test, for riddles.** After one sentence, can the reader say what was claimed? If
+all they can say is that an answer is coming, name the things in the sentence that counts them:
+*"Two things have been getting better at once"* → *"The models have been getting better, and so has
+our ability to ground them in your data."*
 
 **The paragraph test matters more than the sentence test.** When a paragraph's claim sits in its
 third sentence, that sentence is the opening — promote it and let the rest reorder behind it.

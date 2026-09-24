@@ -58,7 +58,8 @@ has verbosity && scan "Verbosity candidates" \
   'delve' 'leverage' 'robust' 'seamless' 'powerful' 'journey' 'landscape' 'solutions' \
   'underscore' 'testament to' 'tapestry' 'realm' 'unlock' 'unleash' \
   'table stakes' 'low-hanging' 'move the needle' 'boil the ocean' 'double-click on' \
-  'you have heard' 'you already know' 'we all'
+  'you have heard' 'you already know' 'we all' \
+  '(two|three|four|both|several|a few) (things|factors|reasons|forces|ideas|changes|questions|acts|problems)'
 
 has tone && scan "Tone candidates" \
   'importantly' 'crucially' 'notably' 'the key insight' 'make no mistake' \
