@@ -92,15 +92,19 @@ Reference: [`headings.md`](reference/headings.md).
 
 ### `tone` — does the voice sit in the band?
 
-Rhythm, cadence, and register. Defects 1, 6, 7, 9, 13, 15, 20, 21, 22.
+Rhythm, cadence, and register. Defects 1, 6, 7, 9, 13, 15, 20, 21, 22, 23.
 
 Hunting: metronomic cadence — three or more consecutive sentences of near-identical shape ·
 significance announcements · sincerity markers and doubled intensifiers · stacked hedges ·
 both-sidesing · affirmation padding and deference openers in reviews · em-dash density as a
-symptom of unstated relations · the register band, which fails at the timid end as well as the
-boastful one.
+symptom of unstated relations · sentences the author would never say aloud, where an abstract noun
+is handed a human verb · the register band, which fails at the timid end as well as the boastful
+one.
 
-**Read it aloud.** Metronomic cadence is inaudible on the page and obvious in the mouth.
+**Read it aloud.** Metronomic cadence is inaudible on the page and obvious in the mouth, and so is
+literary narration: *"a quieter question arrives a few months in"* is nothing anyone says. Where the
+piece is adapted from a talk, read the script beside it — the spoken line is the author's voice, and
+the essay drifts from it by elevating, not by shortening.
 
 Reference: [`rhythm.md`](reference/rhythm.md).
 

@@ -65,6 +65,39 @@ logic, not fewer dashes.
 
 ---
 
+## The speech test
+
+**Read the sentence aloud as though saying it to one person. If you would never say it, it does not
+belong in the piece, however well it reads on the page.**
+
+The failure has a signature: an abstract noun handed a human or physical verb, in the cadence of a
+magazine essay. *A quieter question arrives a few months in.* *A congress forms when a field moves
+faster than its practitioners can compare notes.* *Doubt creeps in.* *A tension runs through the
+program.* Each is grammatical, none is false, and no author says any of them out loud — which is why
+a piece built from them stops sounding like the person whose name is on it. The reader does not
+diagnose it; they just stop hearing a voice.
+
+Two places it enters:
+
+- **Adapting a talk to prose.** The spoken original is already in the author's voice and usually
+  needs shortening, not elevating. A written version that improves on speech generally only
+  literaturizes it. Mine the script first; where the essay and the script disagree, the script is
+  the evidence of how the author actually speaks.
+- **Openings.** Scene-setting before the claim is where the borrowed cadence is most tempting, and
+  it compounds with **Throat-clearing opener** (defect 10). An opening earns its place by making
+  the claim, not by setting a scene.
+
+The fix is the words you would use: name who is doing the thing (*"a few months in, people start
+asking whether any of it compounds"*), or drop the frame and ask the question. The frame usually
+deletes cleanly, which is **Cut what survives cutting** (principle 1); what is left under it was
+the sentence you meant.
+
+**This is not a ban on figures of speech.** A metaphor the author would say aloud stays — the test
+is speech, not plainness. *"If we think of models as wild horses"* is spoken English and survives;
+*"a quieter question arrives"* is not, and does not.
+
+---
+
 ## The register band
 
 Each row has a floor and a ceiling. The failure is at either end, not only at the top.
